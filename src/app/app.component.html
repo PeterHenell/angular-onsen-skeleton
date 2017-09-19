@@ -16,15 +16,24 @@
 
     <div style="text-align:center">
       <h1>{{title}}</h1>
-      <h2>{{hero.name}} details!</h2>
+      <h2>{{pet.name}} details!</h2>
 
-      <div><label>id: </label>{{hero.id}}</div>
-      <div><label>name: </label>{{hero.name}}</div>
-      <h3>Edit Hero:</h3>
+      <div><label>id: </label>{{pet.id}}</div>
+      <div><label>name: </label>{{pet.name}}</div>
+      <h3>Edit Pet:</h3>
       <div>
-          <label for="input.hero.name">Hero Name</label>
-          <ons-input input-id="input.hero.name" type="text" [(value)]="hero.name"></ons-input> 
+          <label for="input.pet.name">Pet Name</label>
+          <ons-input input-id="input.pet.name" type="text" [(value)]="pet.name"></ons-input> 
       </div>
-    </div>  
+      <ons-list>
+          <!-- https://github.com/OnsenUI/OnsenUI/blob/master/bindings/angular2/examples/lazy-repeat.ts -->
+        <ons-list-item id="item-{{ i }}" *onsLazyRepeat="let item of pet.photoUrls; let i = index">
+          <div class="center">
+            #{{i}}:{{item}}
+          </div>
+        </ons-list-item>
+      </ons-list>
+    </div>
   </div>
+    
 </ons-page>
