@@ -27,9 +27,11 @@
       </div>
       <ons-list>
           <!-- https://github.com/OnsenUI/OnsenUI/blob/master/bindings/angular2/examples/lazy-repeat.ts -->
-        <ons-list-item id="item-{{ i }}" *onsLazyRepeat="let item of pet.photoUrls; let i = index">
+        <ons-list-item id="item-{{ image }}" *ngFor="let image of pet.photoUrls">
           <div class="center">
-            #{{i}}:{{item}}
+            <!-- <img src="{{item}}" width="120" height="120"> -->
+            # {{image}}
+            <ons-button (click)="show(image)">Click</ons-button>
           </div>
         </ons-list-item>
       </ons-list>

@@ -1,10 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 
 import {
   OnsLazyRepeat,
+  OnsenModule,
   ViewChild
 } from 'ngx-onsenui';
 
+// import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import * as models from '../service/model/models';
 
 @Component({
@@ -18,6 +20,10 @@ export class AppComponent {
 
   @ViewChild(OnsLazyRepeat) lazyRepeat: OnsLazyRepeat;
 
+  show(id) {
+    alert(id);
+  }
+
   pet: models.Pet = {
     id: 1,
     name: 'Spot',
@@ -28,8 +34,8 @@ export class AppComponent {
     status: models.Pet.StatusEnum.available,
     tags: [{name: "Nice Doggo"}, {name: "Good dogs"}],
     photoUrls: [
-        "http://whaddagooddog.com/wp-content/uploads/2016/04/57951907.jpg", 
-        "https://images.petsbest.com/marketing/blog/Dogs-Bite.jpg"
+        "/assets/dog1.jpeg", 
+        "/assets/dog2.jpeg"
       ]
   };
 }
